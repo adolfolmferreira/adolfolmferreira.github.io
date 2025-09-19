@@ -179,11 +179,11 @@
             project" — every United manager, right before the sack.</div>
         <footer class="footer">Made with ❤️ in Portugal.</footer>
     </div>
-
     <script>
-        // start from 0 and count up every second
         (function () {
-            let totalSeconds = 0;
+            // Set your launch date/time here (UTC recommended)
+            const startDate = new Date("2025-09-19T12:00:00Z"); // <-- change to actual upload time
+
             const elDays = document.getElementById('days');
             const elHours = document.getElementById('hours');
             const elMinutes = document.getElementById('minutes');
@@ -192,6 +192,10 @@
             function pad(n) { return String(n).padStart(2, '0'); }
 
             function update() {
+                const now = new Date();
+                let totalSeconds = Math.floor((now - startDate) / 1000);
+                if (totalSeconds < 0) totalSeconds = 0;
+
                 const days = Math.floor(totalSeconds / 86400);
                 const hours = Math.floor((totalSeconds % 86400) / 3600);
                 const minutes = Math.floor((totalSeconds % 3600) / 60);
@@ -203,15 +207,8 @@
                 elSeconds.textContent = pad(seconds);
             }
 
-            // initialize with 0
             update();
-
-            // increment every second
-            setInterval(function () {
-                totalSeconds++;
-                update();
-            }, 1000);
-
+            setInterval(update, 1000);
         })();
     </script>
 </body>
