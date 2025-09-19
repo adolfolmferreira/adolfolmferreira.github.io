@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZFW1C6R95"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WZFW1C6R95');
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>How long until Ruben Amorim gets sacked at Manchester United?</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --mu-red: #DA291C;
+            /* Manchester United red */
+            --mu-black: #000000;
+            --mu-gold: #CFAE46;
+            --bg: #111;
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Press Start 2P', monospace;
+            background: linear-gradient(180deg, var(--bg), #0b0b0b);
+            color: #fff;
+            overflow: hidden;
+            background: url(amorim-bg@1.5x.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .wrap {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            gap: 24px;
+        }
+
+        .title {
+            font-size: 18px;
+            text-align: center;
+            color: var(--mu-gold);
+        }
+
+        /* referee substitution-board style */
+        .board {
+            background: linear-gradient(180deg, #020202 0%, #121212 100%);
+            border-radius: 18px;
+            padding: 28px 30px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7), inset 0 2px 0 rgba(255, 255, 255, 0.02);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: center;
+            min-width: 320px;
+            color: var(--mu-red);
+            border: 6px solid rgba(0, 0, 0, 0.6);
+        }
+
+        .display-row {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .unit {
+            background: linear-gradient(180deg, #020202 0%, #0b0b0b 100%);
+            border-radius: 10px;
+            padding: 10px 14px;
+            min-width: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: inset 0 -6px 18px rgba(218, 41, 28, 0.06);
+            border: 4px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .digits {
+            font-size: 42px;
+            letter-spacing: 2px;
+            line-height: 1;
+            color: var(--mu-red);
+            text-shadow: 0 0 18px rgba(218, 41, 28, 0.55), 0 0 8px rgba(218, 41, 28, 0.25);
+            padding: 6px 10px;
+            border-radius: 6px;
+            background: linear-gradient(180deg, #0b0b0b 0%, #030303 100%);
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .label {
+            font-size: 9px;
+            color: #ddd;
+            margin-top: 8px;
+            letter-spacing: 1px
+        }
+
+        /* separator style */
+        .sep {
+            font-size: 20px;
+            color: #bbb
+        }
+
+        /* footer */
+        .footer {
+            font-size: 10px;
+            color: #999;
+            text-align: center
+        }
+
+        /* responsive */
+        @media (max-width:420px) {
+            .digits {
+                font-size: 28px
+            }
+
+            .unit {
+                min-width: 96px;
+                padding: 8px
+            }
+        }
+
+        /* Manchester United colored background bar */
+        .mu-bar {
+            width: 100%;
+            max-width: 760px;
+            height: 12px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, var(--mu-red) 0%, var(--mu-red) 70%, var(--mu-gold) 70%, var(--mu-gold) 100%);
+            margin-top: 8px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="title">How long until Ruben Amorim gets sacked at <strong>Manchester United</strong>?</div>
+
+        <div class="board" role="region" aria-label="Timer counting from zero">
+            <div class="display-row" id="counter">
+                <div class="unit">
+                    <div class="digits" id="days">0</div>
+                    <div class="label">DAYS</div>
+                </div>
+                <div class="sep">|</div>
+                <div class="unit">
+                    <div class="digits" id="hours">0</div>
+                    <div class="label">HOURS</div>
+                </div>
+                <div class="sep">|</div>
+                <div class="unit">
+                    <div class="digits" id="minutes">0</div>
+                    <div class="label">MINUTES</div>
+                </div>
+                <div class="sep">|</div>
+                <div class="unit">
+                    <div class="digits" id="seconds">0</div>
+                    <div class="label">SECONDS</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="width: 55%; text-align: center; line-height: 140%;">"Don’t worry, it’s part of the long-term
+            project" — every United manager, right before the sack.</div>
+        <footer class="footer">Made with ❤️ in Portugal.</footer>
+    </div>
+
+    <script>
+        // start from 0 and count up every second
+        (function () {
+            let totalSeconds = 0;
+            const elDays = document.getElementById('days');
+            const elHours = document.getElementById('hours');
+            const elMinutes = document.getElementById('minutes');
+            const elSeconds = document.getElementById('seconds');
+
+            function pad(n) { return String(n).padStart(2, '0'); }
+
+            function update() {
+                const days = Math.floor(totalSeconds / 86400);
+                const hours = Math.floor((totalSeconds % 86400) / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+
+                elDays.textContent = days;
+                elHours.textContent = pad(hours);
+                elMinutes.textContent = pad(minutes);
+                elSeconds.textContent = pad(seconds);
+            }
+
+            // initialize with 0
+            update();
+
+            // increment every second
+            setInterval(function () {
+                totalSeconds++;
+                update();
+            }, 1000);
+
+        })();
+    </script>
+</body>
+
+</html>
